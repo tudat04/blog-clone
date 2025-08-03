@@ -1,0 +1,277 @@
+/* src/styles.css */
+
+:root {
+    --primary-color: #A2E4B0; /* Xanh lá nhạt */
+    --secondary-color: #4CAF50; /* Xanh lá đậm */
+    --background-color: #F8F8F8; /* Xám nhạt, trắng nhiều hơn */
+    --text-color: #333;
+    --text-light-color: #666;
+    --border-color: #ddd;
+    --button-color: #2196F3; /* Màu nổi bật cho nút bấm */
+    --button-hover-color: #1976D2;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    background-color: var(--primary-color);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-left .search-bar {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    width: 300px;
+}
+
+.header-right .logout-button {
+    background-color: var(--button-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.header-right .logout-button:hover {
+    background-color: var(--button-hover-color);
+}
+.header-right .action-button {
+    background-color: var(--button-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.header-right .action-button:hover {
+    background-color: var(--button-hover-color);
+}
+
+.header-right .login-button,
+.header-right .register-button {
+    text-decoration: none; /* Bỏ gạch chân cho thẻ Link */
+    margin-left: 10px;
+}
+
+.user-profile-button {
+    background-color: #f1f1f1;
+    color: var(--text-color);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Các form chung (Login, Register, Add/Edit) */
+.form-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.form-container {
+    max-width: 400px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-submit-button {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-submit-button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Dashboard Page (Nội dung trang chủ) */
+.dashboard-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.main-content {
+    flex: 2; /* 70% */
+}
+
+.comment-sidebar {
+    flex: 1; /* 30% */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.comment-sidebar h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.add-post-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.add-post-section .add-post-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.add-post-section .add-post-button {
+    background-color: var(--button-color);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Bài viết (Article) */
+.article-post {
+    background-color: white;
+    border: 2px solid var(--secondary-color); /* Viền xanh lá đậm */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.article-post h3 {
+    margin-top: 0;
+    color: var(--secondary-color);
+}
+
+.article-post .author {
+    font-size: 0.9em;
+    color: var(--text-light-color);
+    margin-bottom: 10px;
+}
+
+.article-post .post-content {
+    line-height: 1.6;
+}
+
+.article-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.article-actions .action-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.article-actions .edit-button {
+    background-color: #FFC107;
+    color: white;
+}
+
+.article-actions .delete-button {
+    background-color: #F44336;
+    color: white;
+}
+
+.article-actions .comment-button {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Comment */
+.comment-list {
+    margin-top: 15px;
+}
+
+.comment-item {
+    background-color: var(--background-color);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.comment-item .comment-author {
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.comment-item .comment-text {
+    margin-top: 5px;
+    line-height: 1.4;
+}
