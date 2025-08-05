@@ -1,65 +1,54 @@
-// src/component/General/Header.js
-import React, {useEffect, useState} from 'react';
-import '../../styles.css';
+// component/General/Header.js
+import '../../styles.css'
 import {Link, useNavigate} from "react-router-dom";
-
-export default function Header (){
+import {useEffect, useState} from "react";
+export default function Header() {
+    const [user, setUser] = useState(null);
     const navigate = useNavigate();
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
-        const user = localStorage.getItem('user');
-        if (user) {
-            setIsLoggedIn(true);
-        } else {
-            setIsLoggedIn(false);
+        const savedUser = localStorage.getItem("currentUser");
+
+        try {
+            if (savedUser && savedUser !== "undefined") {
+                setUser(JSON.parse(savedUser));
+            }
+        } catch (error) {
+            console.error("Lỗi parse JSON:", error);
+            localStorage.removeItem("currentUser"); // dọn dẹp nếu dữ liệu hỏng
         }
     }, []);
-
     const handleLogout = () => {
-        localStorage.removeItem('user');
-        setIsLoggedIn(false);
-        navigate('/login');
+        localStorage.removeItem("currentUser");
+        setUser(null);
+        navigate("/"); // quay về trang chủ
     };
 
-    // Khai báo một biến để lưu trữ các nút cần render
-    let actionButtons;
-
-    if (isLoggedIn) {
-        // Nếu đã đăng nhập, gán các nút Đăng xuất và Sửa thông tin
-        actionButtons = (
-            <>
-                <button className="user-profile-button">
-                    Sửa thông tin
-                </button>
-                <button onClick={handleLogout} className="logout-button">
-                    Đăng xuất
-                </button>
-            </>
+    let authSection;
+    if (user) {
+        authSection = (
+            <div> {user.username}<button className="logout-button" onClick={handleLogout}>
+                  Đăng xuất
+            </button></div>
         );
     } else {
-        // Nếu chưa đăng nhập, gán các nút Đăng nhập và Đăng ký
-        actionButtons = (
+        authSection = (
             <>
-                <Link to="/login" className="login-button">
-                    <button className="action-button">Đăng nhập</button>
-                </Link>
-                <Link to="/register" className="register-button">
-                    <button className="action-button">Đăng ký</button>
-                </Link>
+                <Link to="/login" className="auth-link">Đăng nhập</Link>
+                <Link to="/register" className="auth-link">Đăng ký</Link>
             </>
         );
     }
 
     return (
-        <div className="header">
-            <div className="header-left">
-                <input type="text" placeholder="Tìm kiếm bài viết..." className="search-bar" />
+        <header className="main-header">
+            <div className="search-box">
+                <input type="text" placeholder="🔍 Tìm kiếm bài viết..." />
             </div>
-            <div className="header-right">
-                {/* Sử dụng biến đã được gán giá trị */}
-                {actionButtons}
+
+            <div className="user-actions">
+                {authSection}
             </div>
-        </div>
-    )
+        </header>
+    );
 }

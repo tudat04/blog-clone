@@ -6,9 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="a348bbd5-5170-4fe8-9d4e-9a30111345cc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/URL.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/URL.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/General/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/General/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Home/Content/AddContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Home/Content/AddContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Home/Content/ViewContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Home/Content/ViewContent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/Home/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Home/Dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Register/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Register/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,20 +43,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/quản lý người dùng/quanli-nguoi-dung",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/dự án React/case study/quan ly blog/quna-ly-blog&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Lenovo\\WebStorm 2024.3.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\dự án React\case study\quan ly blog\quna-ly-blog" />
@@ -70,7 +80,12 @@
       <updated>1753879158466</updated>
       <workItem from="1753879159576" duration="757000" />
       <workItem from="1754144619800" duration="5855000" />
-      <workItem from="1754188489572" duration="7479000" />
+      <workItem from="1754188489572" duration="11659000" />
+      <workItem from="1754205691867" duration="17217000" />
+      <workItem from="1754306740632" duration="6066000" />
+      <workItem from="1754315794564" duration="1387000" />
+      <workItem from="1754394445127" duration="2005000" />
+      <workItem from="1754398594177" duration="5982000" />
     </task>
     <servers />
   </component>

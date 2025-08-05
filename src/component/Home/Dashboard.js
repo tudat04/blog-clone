@@ -1,80 +1,71 @@
-// src/component/Home/Dashboard.js
-import React, {useEffect, useState} from 'react';
-import '../../styles.css';
+// component/Home/Dashboard.js
+import { Link } from "react-router-dom";
+import { Card, CardContent, Typography, Button, Stack, Box } from '@mui/joy';
+import '../../styles.css'
+import {useEffect, useState} from "react";
 import axios from "axios";
-import {URl_POST} from "../../URL";
+import {URl_POST, URl_USER} from "../../URL";
 
-export default function Dashboard () {
+export default function Dashboard() {
+    const [posts, setPosts] = useState([]);
+    const [users, setUsers] = useState([]);
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+    function loadData(){
+        Promise.all([axios.get(URl_POST), axios.get(URl_USER)])
+            .then(([resPost, resUser])=>{
+            setPosts(resPost.data);
+            setUsers(resUser.data);
+        });
+    }
+
+    function filterPost(posts){
+        if(!currentUser){
+            return posts.visibility === 'public'
+        }
+    }
+
+    function getAuthorName(authorId){
+        const author = users.find(u => u.id === authorId);
+        if(author){
+            return author.name;
+        }
+        else{
+            return 'người dùng ẩn danh';
+        }
+    }
+
+    useEffect(()=>{loadData()
+    },[])
+
     return (
-        <div className="dashboard-container">
-            {/* Phần chính: Hiển thị các bài viết (70%) */}
-            <div className="main-content">
-                {/* Phần thêm bài viết */}
-                <div className="add-post-section">
-                    <input type="text" placeholder="Bạn đang nghĩ gì?" className="add-post-input" />
-                    <button className="add-post-button">Đăng bài</button>
-                </div>
-
-                {/* Khung bài viết mẫu 1 */}
-                <div className="article-post">
-                    <h3>Tiêu đề bài viết mẫu 1</h3>
-                    <div className="author">Tác giả: Tên tác giả</div>
-                    <p className="post-content">
-                        Nội dung bài viết mẫu. Đây là một đoạn văn bản tóm tắt nội dung chính của bài viết.
-                        Khi có dữ liệu thật, phần này sẽ được lặp lại cho mỗi bài viết.
-                    </p>
-                    <div className="article-actions">
-                        <button className="action-button comment-button">
-                            Hiện/Ẩn Comment
-                        </button>
-                        <button className="action-button edit-button">
-                            Sửa
-                        </button>
-                        <button className="action-button delete-button">
-                            Xóa
-                        </button>
-                    </div>
-                </div>
-
-                {/* Khung bài viết mẫu 2 */}
-                <div className="article-post">
-                    <h3>Tiêu đề bài viết mẫu 2</h3>
-                    <div className="author">Tác giả: Tên tác giả</div>
-                    <p className="post-content">
-                        Đây là bài viết mẫu thứ hai. Mỗi bài viết sẽ có một khung tương tự như thế này.
-                        Các nút chức năng sẽ được điều khiển bằng logic React.
-                    </p>
-                    <div className="article-actions">
-                        <button className="action-button comment-button">
-                            Hiện/Ẩn Comment
-                        </button>
-                        <button className="action-button edit-button">
-                            Sửa
-                        </button>
-                        <button className="action-button delete-button">
-                            Xóa
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-
-            {/* Sidebar: Hiển thị comments (30%) */}
-            <div className="comment-sidebar">
-                <h3>Bình luận</h3>
-                <div className="comment-list">
-                    {/* Khung comment mẫu 1 */}
-                    <div className="comment-item">
-                        <div className="comment-author">Người dùng A</div>
-                        <div className="comment-text">Bình luận mẫu 1.</div>
-                    </div>
-                    {/* Khung comment mẫu 2 */}
-                    <div className="comment-item">
-                        <div className="comment-author">Người dùng B</div>
-                        <div className="comment-text">Bình luận mẫu 2.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Box sx={{ backgroundColor: '#e6f4ea', minHeight: '100vh', py: 4 }}>
+        <Box sx={{ p: 4 }}>
+            <Stack spacing={2}>
+                {posts.map((post) => {
+                    const authorName = getAuthorName(post.authorId);
+                    return (
+                    <Card key={post.id} variant="outlined" sx={{ borderColor: 'green', borderWidth: 2 }}>
+                        <CardContent>
+                            <Typography level="h2">{post.title}</Typography>
+                            <Typography level="body-sm" sx={{ mb: 1 }}>
+                                Tác giả: {authorName}  — {post.visibility}
+                            </Typography>
+                            <Typography level="body-md" sx={{ mb: 2 }}>
+                                {post.content}
+                            </Typography>
+                            <Stack direction="row" spacing={1}>
+                                <Button color="primary">Sửa</Button>
+                                <Button color="danger" variant="outlined">Xoá</Button>
+                            </Stack>
+                        </CardContent>
+                    </Card>
+                    );
+                })}
+            </Stack>
+        </Box>
+        </Box>
     );
 }
+
+

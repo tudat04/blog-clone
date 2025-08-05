@@ -2,21 +2,19 @@
 import React from 'react';
 import '../../../styles.css';
 
+// component/Home/Content/AddContent.js
 export default function AddContent() {
     return (
-        <div className="form-container">
+        <div className="add-content-form">
             <h2>Tạo bài viết mới</h2>
-            <form>
-                <div className="form-group">
-                    <label htmlFor="title">Tiêu đề</label>
-                    <input type="text" id="title" name="title" />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="content">Nội dung</label>
-                    <textarea id="content" name="content" rows="10"></textarea>
-                </div>
-                <button type="submit" className="form-submit-button">Đăng bài</button>
-            </form>
+            <input type="text" placeholder="Tiêu đề" />
+            <textarea placeholder="Nội dung bài viết..." rows="6" />
+            <select>
+                <option value="public">Công khai</option>
+                <option value="private">Riêng tư</option>
+            </select>
+            <button className="submit-button">Đăng bài</button>
         </div>
     );
-};
+}
+
