@@ -4,18 +4,20 @@ import Home from "./component/Home/Home";
 import Login from "./component/Login/Login";
 import Register from "./component/Register/Register";
 import AddContent from "./component/Home/Content/AddContent";
-import EditContent from "./component/Home/Content/EditContent";
-import ViewContent from "./component/Home/Content/ViewContent";
 import Dashboard from "./component/Home/Dashboard";
+import EditUsers from "./component/users/EditUsers";
+import EditAndComment from "./component/Home/Content/EditAndComment";
 
 function App() {
     return (
+
         <Routes>
             <Route path="/" element={<Home />}>
                 <Route index element={<Dashboard />} />
                 <Route path="add-content" element={<AddContent />} />
-                <Route path="edit-content/:id" element={<EditContent />} />
-                <Route path="view/:id" element={<ViewContent />} />
+                <Route path="edit-user/:id" element={<EditUsers />} />
+                <Route path="edit-post/:id" element={<EditAndComment />} />
+
             </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />

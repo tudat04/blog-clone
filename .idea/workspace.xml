@@ -5,19 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a348bbd5-5170-4fe8-9d4e-9a30111345cc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/component/Home/Content/EditAndComment.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/data.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/URL.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/URL.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/General/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/General/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Home/Comment/AddComment.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Home/Comment/Comment.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Home/Comment/EditComment.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/Home/Content/AddContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Home/Content/AddContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Home/Content/ViewContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Home/Content/ViewContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Home/Content/EditContent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Home/Content/ViewContent.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/Home/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Home/Dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Home/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Login/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Register/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Register/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/users/EditUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/users/EditUsers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/AuthContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/AuthContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +67,16 @@
       <recent name="D:\dự án React\case study\quan ly blog\quna-ly-blog" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="Header.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/component/General/Header.js" working-dir="$PROJECT_DIR$/src/component/General">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.Header.js" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -86,6 +100,8 @@
       <workItem from="1754315794564" duration="1387000" />
       <workItem from="1754394445127" duration="2005000" />
       <workItem from="1754398594177" duration="5982000" />
+      <workItem from="1754652613208" duration="11897000" />
+      <workItem from="1754727449402" duration="13146000" />
     </task>
     <servers />
   </component>
@@ -119,5 +135,23 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/component/Home/Content/EditAndComment.js</url>
+          <line>119</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/component/Home/Content/EditAndComment.js</url>
+          <line>38</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

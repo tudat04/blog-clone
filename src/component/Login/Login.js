@@ -5,6 +5,7 @@ import {useNavigate} from "react-router-dom";
 import { Link } from "react-router-dom";
 import {URl_USER} from "../../URL";
 import axios from "axios";
+import { useUser } from '../../context/AuthContext.js';
 
 import { CssVarsProvider, useColorScheme } from '@mui/joy/styles';
 import Sheet from '@mui/joy/Sheet';
@@ -49,24 +50,27 @@ function ModeToggle() {
 export default function Login(props) {
     const [usernamePassword, setUsernamePassword] = useState({ username: "", password: "" });
     const navigate = useNavigate();
+    const { login } = useUser(); // 👈 lấy hàm login từ Context
 
     function handleChange(e) {
         setUsernamePassword({ ...usernamePassword, [e.target.name]: e.target.value });
     }
 
-    function login() {
-        if(usernamePassword.username === '' || usernamePassword.password === ''){
-            return(alert('vui lòng không bỏ trống'))
+    function handleLogin() {
+        if (usernamePassword.username === '' || usernamePassword.password === '') {
+            return alert('Vui lòng không bỏ trống');
         }
+
         axios.get(URl_USER).then((res) => {
             const database = res.data;
             const found = database.find(u =>
                 u.username === usernamePassword.username &&
                 u.password === usernamePassword.password
             );
+
             if (found) {
                 alert("Đăng nhập thành công");
-                localStorage.setItem("currentUser", JSON.stringify(found));
+                login(found); // 👈 gọi login từ Context
                 navigate('/');
             } else {
                 alert("Sai tài khoản hoặc mật khẩu");
@@ -122,7 +126,7 @@ export default function Login(props) {
                             sx={{height: 40, display: 'flex', alignItems: 'center', '& input': {paddingY: '0 !important', margin: 0,}}}
                         />
                     </FormControl>
-                    <Button color="success" sx={{ mt: 2 }} onClick={login}>Đăng Nhập</Button>
+                    <Button color="success" sx={{ mt: 2 }} onClick={handleLogin}>Đăng Nhập</Button>
                     <Typography
                         endDecorator={<Link to="/register">Tạo tài khoản</Link>}
                         sx={{ fontSize: 'sm', alignSelf: 'center' }}

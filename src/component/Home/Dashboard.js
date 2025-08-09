@@ -1,29 +1,37 @@
 // component/Home/Dashboard.js
-import { Link } from "react-router-dom";
 import { Card, CardContent, Typography, Button, Stack, Box } from '@mui/joy';
-import '../../styles.css'
-import {useEffect, useState} from "react";
+
+import {useEffect, useMemo, useState} from "react";
 import axios from "axios";
 import {URl_POST, URl_USER} from "../../URL";
+import {useUser} from "../../context/AuthContext";
+import {useNavigate} from "react-router-dom";
 
 export default function Dashboard() {
     const [posts, setPosts] = useState([]);
     const [users, setUsers] = useState([]);
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const [loading, setLoading] = useState(true);
+    const { user } = useUser();
+    const navigate = useNavigate();
 
     function loadData(){
         Promise.all([axios.get(URl_POST), axios.get(URl_USER)])
             .then(([resPost, resUser])=>{
             setPosts(resPost.data);
             setUsers(resUser.data);
+        }).finally(() => {
+            setLoading(false);
         });
     }
 
-    function filterPost(posts){
-        if(!currentUser){
-            return posts.visibility === 'public'
-        }
-    }
+
+    const visiblePosts = useMemo(() => {
+        return user
+            ? posts
+            : posts.filter(post => post.visibility === 'public');
+    }, [posts, user]);
+
+
 
     function getAuthorName(authorId){
         const author = users.find(u => u.id === authorId);
@@ -35,14 +43,39 @@ export default function Dashboard() {
         }
     }
 
-    useEffect(()=>{loadData()
-    },[])
+    const handleCreatePost = () => {
+        navigate('/add-content');
+    };
+
+    function handleDelete(id) {
+        if (window.confirm('Bạn có chắc muốn xoá bài viết này?')) {
+            axios.delete(`${URl_POST}/${id}`).then(() => {
+                setPosts((prev) => prev.filter((p) => p.id !== id));
+            });
+        }
+    }
+
+    useEffect(() => {
+        setLoading(true);
+        loadData();
+    }, [user]);
+    if (loading) return <p>Đang tải dữ liệu...</p>;
 
     return (
         <Box sx={{ backgroundColor: '#e6f4ea', minHeight: '100vh', py: 4 }}>
+            <Button onClick={handleCreatePost}
+                startDecorator={<span style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>＋</span>}
+                color="success"
+                variant="solid"
+                size="lg"
+            >
+                Tạo bài viết
+            </Button>
         <Box sx={{ p: 4 }}>
+
+
             <Stack spacing={2}>
-                {posts.map((post) => {
+                {visiblePosts.map((post) => {
                     const authorName = getAuthorName(post.authorId);
                     return (
                     <Card key={post.id} variant="outlined" sx={{ borderColor: 'green', borderWidth: 2 }}>
@@ -54,9 +87,13 @@ export default function Dashboard() {
                             <Typography level="body-md" sx={{ mb: 2 }}>
                                 {post.content}
                             </Typography>
-                            <Stack direction="row" spacing={1}>
-                                <Button color="primary">Sửa</Button>
-                                <Button color="danger" variant="outlined">Xoá</Button>
+                            {user?.id && String(post.authorId) === String(user.id) && (
+                                <Stack direction="row" spacing={1}>
+                                    <Button color="primary" onClick={() => navigate(`/edit-content/${post.id}`)}>Sửa</Button>
+                                    <Button color="danger" variant="outlined" onClick={() => handleDelete(post.id)}>Xoá</Button>
+                                </Stack>)}
+                            <Stack direction="row" spacing={3}>
+                            <Button  color="primary" onClick={() => navigate(`/edit-post/${post.id}`)}>Xem chi tiết</Button>
                             </Stack>
                         </CardContent>
                     </Card>

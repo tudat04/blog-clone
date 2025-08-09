@@ -33,6 +33,13 @@
           "userId": "u1",
           "content": "Cảm ơn bạn đã góp ý!",
           "createdAt": "2024-07-21T09:00:00.000Z"
+        },
+        {
+          "id": "c1754738541482",
+          "userId": "u1",
+          "userName": "Nguyễn Văn A",
+          "content": "áds",
+          "createdAt": "2025-08-09T11:22:21.482Z"
         }
       ]
     },
@@ -43,7 +50,15 @@
       "authorId": "u2",
       "visibility": "private",
       "createdAt": "2024-07-22T14:30:00.000Z",
-      "comments": []
+      "comments": [
+        {
+          "id": "c1754738554343",
+          "userId": "u1",
+          "userName": "Nguyễn Văn A",
+          "content": "ádasds",
+          "createdAt": "2025-08-09T11:22:34.343Z"
+        }
+      ]
     }
   ]
 }

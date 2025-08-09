@@ -1,54 +1,60 @@
-// component/General/Header.js
-import '../../styles.css'
-import {Link, useNavigate} from "react-router-dom";
-import {useEffect, useState} from "react";
+import { Box, Stack, Typography, Button } from '@mui/joy';
+import { useNavigate } from 'react-router-dom';
+import { useUser } from '../../context/AuthContext';
+
 export default function Header() {
-    const [user, setUser] = useState(null);
     const navigate = useNavigate();
+    const { user, logout } = useUser();
 
-    useEffect(() => {
-        const savedUser = localStorage.getItem("currentUser");
 
-        try {
-            if (savedUser && savedUser !== "undefined") {
-                setUser(JSON.parse(savedUser));
-            }
-        } catch (error) {
-            console.error("Lỗi parse JSON:", error);
-            localStorage.removeItem("currentUser"); // dọn dẹp nếu dữ liệu hỏng
-        }
-    }, []);
     const handleLogout = () => {
-        localStorage.removeItem("currentUser");
-        setUser(null);
-        navigate("/"); // quay về trang chủ
+        logout();
+        alert('Bạn đã đăng xuất');
+        navigate('/');
     };
 
-    let authSection;
-    if (user) {
-        authSection = (
-            <div> {user.username}<button className="logout-button" onClick={handleLogout}>
-                  Đăng xuất
-            </button></div>
-        );
-    } else {
-        authSection = (
-            <>
-                <Link to="/login" className="auth-link">Đăng nhập</Link>
-                <Link to="/register" className="auth-link">Đăng ký</Link>
-            </>
-        );
-    }
-
     return (
-        <header className="main-header">
-            <div className="search-box">
-                <input type="text" placeholder="🔍 Tìm kiếm bài viết..." />
-            </div>
+        <Box sx={{ backgroundColor: 'success.solidBg', px: 3, py: 2 }}>
+            <Stack direction="row" justifyContent="space-between" alignItems="center">
+                {/* 👈 Nhóm bên trái: thông tin người dùng */}
+                <Stack direction="row" spacing={2} alignItems="center">
+                    {user ? (
+                        <>
+                            <Typography level="body-md">
+                                Xin chào, {user.name}
+                            </Typography>
 
-            <div className="user-actions">
-                {authSection}
-            </div>
-        </header>
+                            {/* ✅ Nút sửa thông tin */}
+                            <Button
+                                color="neutral"
+                                variant="outlined"
+                                size="sm"
+                                onClick={() => navigate(`/edit-user/${user.id}`)}
+                            >
+                                Sửa thông tin
+                            </Button>
+
+                            <Button color="danger" onClick={handleLogout}>
+                                Đăng xuất
+                            </Button>
+                        </>
+                    ) : (
+                        <>
+                            <Button color="primary" onClick={() => navigate('/login')}>
+                                Đăng nhập
+                            </Button>
+                            <Button color="neutral" onClick={() => navigate('/register')}>
+                                Đăng ký
+                            </Button>
+                        </>
+                    )}
+                </Stack>
+
+                {/* 👉 Tiêu đề nằm bên phải */}
+                <Typography level="h4">
+                    🌿 Blog Xanh
+                </Typography>
+            </Stack>
+        </Box>
     );
 }
