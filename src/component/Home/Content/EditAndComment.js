@@ -1,8 +1,8 @@
 import {
-    Card, CardContent, Typography, Button, Textarea, List, ListItem, IconButton, Divider
+    Card, CardContent, Typography, Button, Textarea, List, ListItem, IconButton, Divider, Stack
 } from '@mui/joy';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import { useUser } from '../../../context/AuthContext.js';
 import axios from 'axios';
 import { URl_POST, URl_USER } from "../../../URL";
@@ -18,25 +18,29 @@ export default function EditAndComment() {
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState('');
 
-    // Tải bài viết + tác giả
+    // Tải dữ liệu bài viết + tác giả
     useEffect(() => {
         axios.get(`${URl_POST}/${id}`)
-            .then(res => {
-                setPost(res.data);
-                setEditedContent(res.data.content);
-                setComments(res.data.comments || []);
-                return axios.get(`${URl_USER}/${res.data.authorId}`);
+            .then(postRes => {
+                setPost(postRes.data);
+                setEditedContent(postRes.data.content);
+                setComments(postRes.data.comments || []);
+
+                // Trả về promise để .then() tiếp
+                return axios.get(`${URl_USER}/${postRes.data.authorId}`);
             })
-            .then(res => setAuthor(res.data))
-            .catch(err => console.error('Lỗi khi tải bài viết:', err));
+            .then(authorRes => {
+                setAuthor(authorRes.data);
+            })
+            .catch(err => {
+                console.error("Lỗi khi tải dữ liệu:", err);
+            });
     }, [id]);
 
     const isOwner = user?.id === post?.authorId;
 
-    // Chuyển chế độ edit
     const handleEditToggle = () => setIsEditing(prev => !prev);
 
-    // Lưu bài viết sau khi edit
     const handleSaveEdit = () => {
         axios.put(`${URl_POST}/${id}`, { ...post, content: editedContent })
             .then(() => {
@@ -46,7 +50,6 @@ export default function EditAndComment() {
             .catch(err => console.error('Lỗi khi lưu bài viết:', err));
     };
 
-    // Thêm bình luận
     const handleAddComment = () => {
         if (!user || !newComment.trim()) return;
 
@@ -71,7 +74,6 @@ export default function EditAndComment() {
             .catch(err => console.error('Lỗi khi thêm bình luận:', err));
     };
 
-    // Xóa bình luận
     const handleDeleteComment = (commentId) => {
         const updatedPost = {
             ...post,
@@ -85,10 +87,16 @@ export default function EditAndComment() {
             .catch(err => console.error('Lỗi khi xóa bình luận:', err));
     };
 
-    if (!post || !author) return <Typography>Đang tải...</Typography>;
+    if (!post || !author) {
+        return <Typography>Đang tải...</Typography>;
+    }
 
     return (
+
         <Card variant="outlined" sx={{ maxWidth: 800, mx: 'auto', mt: 4, borderColor: '#2e7d32' }}>
+            <Stack direction="row" spacing={3}>
+                <Button  color="#66b198"> <Link to={'/'}>Về Trang chủ</Link> </Button>
+            </Stack>
             <CardContent>
                 <Typography level="h3" sx={{ color: '#2e7d32' }}>{post.title}</Typography>
                 <Typography level="body-sm" sx={{ mb: 1 }}>

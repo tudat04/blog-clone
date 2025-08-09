@@ -89,7 +89,6 @@ export default function Dashboard() {
                             </Typography>
                             {user?.id && String(post.authorId) === String(user.id) && (
                                 <Stack direction="row" spacing={1}>
-                                    <Button color="primary" onClick={() => navigate(`/edit-content/${post.id}`)}>Sửa</Button>
                                     <Button color="danger" variant="outlined" onClick={() => handleDelete(post.id)}>Xoá</Button>
                                 </Stack>)}
                             <Stack direction="row" spacing={3}>

@@ -1,5 +1,5 @@
 import { Box, Stack, Typography, Button } from '@mui/joy';
-import { useNavigate } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import { useUser } from '../../context/AuthContext';
 
 export default function Header() {
@@ -16,22 +16,14 @@ export default function Header() {
     return (
         <Box sx={{ backgroundColor: 'success.solidBg', px: 3, py: 2 }}>
             <Stack direction="row" justifyContent="space-between" alignItems="center">
-                {/* 👈 Nhóm bên trái: thông tin người dùng */}
                 <Stack direction="row" spacing={2} alignItems="center">
                     {user ? (
                         <>
-                            <Typography level="body-md">
-                                Xin chào, {user.name}
-                            </Typography>
+                            <Typography level="body-md">Xin chào, {user.name}</Typography>
 
-                            {/* ✅ Nút sửa thông tin */}
-                            <Button
-                                color="neutral"
-                                variant="outlined"
-                                size="sm"
+                            <Button color="neutral" variant="outlined" size="sm"
                                 onClick={() => navigate(`/edit-user/${user.id}`)}
-                            >
-                                Sửa thông tin
+                            >Sửa thông tin
                             </Button>
 
                             <Button color="danger" onClick={handleLogout}>
@@ -50,9 +42,8 @@ export default function Header() {
                     )}
                 </Stack>
 
-                {/* 👉 Tiêu đề nằm bên phải */}
                 <Typography level="h4">
-                    🌿 Blog Xanh
+                    <Link to={'/'}>⎇ Blog Xanh </Link>
                 </Typography>
             </Stack>
         </Box>
