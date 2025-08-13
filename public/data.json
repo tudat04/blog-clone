@@ -1,0 +1,66 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "name": "Phạm Minh Dương",
+      "email": "minhduong@techblog.com",
+      "password": "123456",
+      "bio": "Quản trị viên hệ thống",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "role": "admin"
+    },
+    {
+      "id": "u2",
+      "name": "Hoàng Thị Lan",
+      "email": "hoanglan@techblog.com",
+      "password": "abcdef",
+      "bio": "Người dùng thường",
+      "createdAt": "2024-01-02T00:00:00.000Z",
+      "role": "user"
+    }
+  ],
+  "posts": [
+    {
+      "id": "p1",
+      "title": "Xây dựng ứng dụng web hiện đại với Next.js 14",
+      "content": "Next.js 14 là framework React mới nhất với nhiều tính năng đột phá. Trong bài viết này, chúng ta sẽ khám phá cách xây dựng ứng dụng web hiện đại và hiệu suất cao.\n\n## Tính năng mới trong Next.js 14:\n- App Router\n- Server Components\n- Streaming\n- Turbopack\n- Partial Prerendering\n\n## Best Practices:\n- SEO optimization\n- Performance monitoring\n- Error boundaries\n- Type safety với TypeScript",
+      "excerpt": "Bài viết giới thiệu về Next.js 14 và các tính năng mới",
+      "authorId": "u1",
+      "authorName": "Phạm Minh Dương",
+      "visibility": "public",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-01T00:00:00.000Z",
+      "comments": [
+        {
+          "id": "c1",
+          "userId": "u2",
+          "userName": "Hoàng Thị Lan",
+          "content": "Bài viết rất chi tiết và cập nhật! Next.js 14 thực sự có nhiều cải tiến đáng kể.",
+          "createdAt": "2024-01-02T01:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Machine Learning cơ bản cho Developer",
+      "content": "Machine Learning không còn xa lạ với các developer. Bài viết này sẽ giúp bạn hiểu rõ các khái niệm cơ bản và cách áp dụng vào thực tế.\n\n## Nội dung chính:\n- Supervised vs Unsupervised Learning\n- Các thuật toán cơ bản\n- Data preprocessing\n- Model evaluation\n- Practical examples với Python\n- Integration vào web app",
+      "excerpt": "Hướng dẫn sử dụng Machine Learning cho developer",
+      "authorId": "u2",
+      "authorName": "Hoàng Thị Lan",
+      "visibility": "public",
+      "createdAt": "2024-01-02T00:00:00.000Z",
+      "updatedAt": "2024-01-02T00:00:00.000Z",
+      "comments": [
+        {
+          "id": "c2",
+          "userId": "u1",
+          "userName": "Phạm Minh Dương",
+          "content": "Bài viết rất hữu ích cho developer muốn tìm hiểu về ML!",
+          "createdAt": "2024-01-02T02:00:00.000Z"
+        }
+      ]
+    }
+  ]
+}
+
+

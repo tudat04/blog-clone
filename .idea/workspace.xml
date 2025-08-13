@@ -5,14 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a348bbd5-5170-4fe8-9d4e-9a30111345cc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/General/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/General/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Home/Content/AddContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Home/Content/AddContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Home/Content/EditAndComment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Home/Content/EditAndComment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Home/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Home/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Register/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Register/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/users/EditUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/users/EditUsers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/General/Header.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Home/Content/AddContent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Home/Content/EditAndComment.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Home/Dashboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Home/Home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Login/Login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Register/Register.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/users/EditUsers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/AuthContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/AuthContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,21 +46,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/dự án React/case study/quan ly blog/quna-ly-blog&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Lenovo\\WebStorm 2024.3.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/case3/blog-clone/blog",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\Lenovo\\WebStorm 2024.3.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\dự án React\case study\quan ly blog\quna-ly-blog" />
@@ -93,6 +101,21 @@
       <workItem from="1754398594177" duration="5982000" />
       <workItem from="1754652613208" duration="11897000" />
       <workItem from="1754727449402" duration="17098000" />
+      <workItem from="1754916383513" duration="316000" />
+      <workItem from="1754916714273" duration="126000" />
+      <workItem from="1754921905007" duration="81000" />
+      <workItem from="1754922028720" duration="26000" />
+      <workItem from="1755006911956" duration="258000" />
+      <workItem from="1755008552751" duration="281000" />
+      <workItem from="1755008850661" duration="905000" />
+      <workItem from="1755009858515" duration="193000" />
+      <workItem from="1755011059596" duration="314000" />
+      <workItem from="1755011865641" duration="372000" />
+      <workItem from="1755012504415" duration="596000" />
+      <workItem from="1755062247251" duration="792000" />
+      <workItem from="1755063117620" duration="194000" />
+      <workItem from="1755068872826" duration="1849000" />
+      <workItem from="1755072273853" duration="2813000" />
     </task>
     <servers />
   </component>
@@ -126,23 +149,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/component/Home/Content/EditAndComment.js</url>
-          <line>127</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/component/Home/Content/EditAndComment.js</url>
-          <line>41</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
